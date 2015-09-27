@@ -33,8 +33,8 @@ To create the HARavg data set:
 ### DATA TRANSFORMATION AND DATA CLEANING MEASURES
 
 The following steps were taken to clean and transform the data into the HARavg dataset:
-1. The relevant files from the HAR Dataset were read into R Studio.
-2. The vector of variable names was subsetted to include only measurements on the mean and standard deviation for each measurement (e.g. variables with mean() and std() in the variable name).
+1. The relevant files from the HAR Dataset were read into R Studio.&nbsp;
+2. The vector of variable names was subsetted to include only measurements on the mean and standard deviation for each measurement (e.g. variables with mean() and std() in the variable name).&nbsp;
 3. The vector of variables names was cleaned to remove parentheses and dashes.
 4. The test and train data files, consisting of 561 feature vectors, were subsetted using the vector of variable names to include only the mean and standard deviation measurements (i.e. variables with mean() and std () in the variable name).
 5. Using dplyr, the vector of variable names was added to the subsetted data sets.
@@ -52,12 +52,12 @@ This is an interger variable. Its range is from 1 to 30. Each participant in the
 
 ### activity
 This is a character variable with the following category labels:
--"WALKING"
--"WALKING_UPSTAIRS"
--"WALKING_DOWNSTAIRS"
--"SITTING"
--"STANDING"
--"LAYING"
+        -"WALKING"
+        -"WALKING_UPSTAIRS"
+        -"WALKING_DOWNSTAIRS"
+        -"SITTING"
+        -"STANDING"
+        -"LAYING"
 
 ### group
 This is a character variable that identified if the participant was part of the test group or train group using the labels "test" or "train. All participants of the experiment were assigned to one of the two groups. This identifed can help link participants back to the relevant original data set more efficiently than just using id. 
