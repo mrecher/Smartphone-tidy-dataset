@@ -69,10 +69,10 @@ For more information on original measurements values see http://archive.ics.uci.
 Note: the variable names closely match the original variable names with the exception that dashes and parenthesis were omitted from the new variable names below and replaced with an underscore.  
 Note: the original variables were normalized and bounded within [-1,1]
 
--tBodyAcc_mean_X
--tBodyAcc_mean_Y
--tBodyAcc_mean_Z
--tBodyAcc_std_X
+&nbsp;*tBodyAcc_mean_X&nbsp;
+*tBodyAcc_mean_Y
+*tBodyAcc_mean_Z
+*tBodyAcc_std_X
 -tBodyAcc_std_Y
 tBodyAcc_std_Z
 tGravityAcc_mean_X
