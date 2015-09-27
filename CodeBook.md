@@ -63,11 +63,7 @@ This is a character variable with the following category labels:
 This is a character variable that identified if the participant was part of the test group or train group using the labels "test" or "train. All participants of the experiment were assigned to one of the two groups. This identifed can help link participants back to the relevant original data set more efficiently than just using id. 
 
 ###averaged variables
-The following variables are numeric variables. They represent the average value of a variable that measured the mean or standard deviation of a measurement, of a subject participating in a given activity. For example, the average tBodyAcc_mean_X, for participant #1, while LAYING down would be the averaged value of all tBodyAcc_mean_X measurements of participant #1 while they were laying down.)
-
-For more information on original measurements values see http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-Note: the variable names closely match the original variable names with the exception that dashes and parenthesis were omitted from the new variable names below and replaced with an underscore.  
-Note: the original variables were normalized and bounded within [-1,1]
+The following variables are numeric variables. They represent the average value of a variable that measured the mean or standard deviation of a measurement, of a subject participating in a given activity. For example, the average tBodyAcc_mean_X, for participant #1, while LAYING down would be the averaged value of all tBodyAcc_mean_X measurements of participant #1 while they were laying down.
 
 - tBodyAcc_mean_X
 - tBodyAcc_mean_Y
@@ -136,6 +132,9 @@ Note: the original variables were normalized and bounded within [-1,1]
 - fBodyBodyGyroJerkMag_mean
 - fBodyBodyGyroJerkMag_std
 
+For more information on the measurements values used to create the above variables, see: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Note: the above variable names closely match the variable names found in the HAR dataset, with the exception that dashes and parenthesis were omitted from the new variable names above and replaced with an underscore.  
+Note: the original variables were normalized and bounded within [-1,1]
 
 #Acknowledgements
 Original data made available by:
