@@ -30,7 +30,9 @@ The code in the run_analysis.R script consists of:
              -Creates the independent data set HARavg (see CodeBook.md for details)
              -Writes the HARavg data set into text file saved in working directory
 
-If the entire script is run, it will produce the HARavg data in the Environment window in R Studio.The script will also write the data set to a text file saved in the working directory. If you want to read the text file from the working directory use the following R code: read.table("HARavg.txt", header=TRUE)
+If the entire script is run, it will produce the HARavg data in the Environment window in R Studio.The script will also write the data set to a text file saved in the working directory. 
+
+If you want to read the text file from the working directory use the following R code: read.table("HARavg.txt", header=TRUE)
 
 
 [1]The Human Activity Recognition Using Smartphones Dataset Version 1.0.can be downloaded at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ;
