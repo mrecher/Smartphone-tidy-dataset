@@ -5,11 +5,11 @@
 
 Data was obtained from the Human Activity Recognition Using Smartphones Dataset Version 1.0 [1] and transformed to create an independent data set called "HARavg". The data in the HARavg dataset consists of the average of each mean and standard deviation measurement- extracted from the HAR dataset-for each activity and each subject. For example, the first row of the dataset gives the averages for the standard deviation and mean measurements for participant #1 while laying down.
 
-#About the Data
+###About the Data
 The Human Activity Recognition Using Smartphones Dataset Version 1.0 (HAR Dataset) consists of data from experiments carried out with a group of 30 volunteers. The volunteers were partitioned into test and train groups. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II); multiple movement measurements using sensor signals (accelerometer and gyroscope) were taken of each subject performing each activity. Variables that constituted the mean and standard deviation for various measurements were included in the dataset. 
 
 
-#Downloaded Data Files
+###Downloaded Data Files
 The following files were used from the HAR Dataset:
 
         features.txt- List of variables used on the feature vector.
@@ -26,9 +26,7 @@ The following files were used from the HAR Dataset:
 
 #Variables extracted from HAR dataset
 To create the HARavg data set:
-        - The mean and standard deviation variables (denoted in the variable names with mean(),         
-        and std() respectively) for each feature vectors, available in the "X_test.txt" and 
-        "X_train.txt" files, were extracted from the HAR Dataset. 
+        - The mean and standard deviation variables (denoted in the variable names with mean(), and std() respectively) for each feature vectors, available in the "X_test.txt" and "X_train.txt" files, were extracted from the HAR Dataset. 
         - The subject id was taken from the "y_train.txt" and "y_test.txt" files. 
         - The activity labels were taken from the "activity_labels.txt"" file. 
 
@@ -49,10 +47,10 @@ The following steps were taken to clean and transform the data into the HARavg d
 
 There are 69 total variables in the final data set.They include the following:
 
-# id
+### id
 This is an interger variable. Its range is from 1 to 30. Each participant in the experiment was given a numeric id.
 
-# activity
+### activity
 This is a character variable with the following category labels:
 -"WALKING"
 -"WALKING_UPSTAIRS"
@@ -61,21 +59,21 @@ This is a character variable with the following category labels:
 -"STANDING"
 -"LAYING"
 
-# group
+### group
 This is a character variable that identified if the participant was part of the test group or train group using the labels "test" or "train. All participants of the experiment were assigned to one of the two groups. This identifed can help link participants back to the relevant original data set more efficiently than just using id. 
 
-#averaged variables
+###averaged variables
 The following variables are numeric variables. They represent the average value of a variable that measured the mean or standard deviation of a measurement, of a subject participating in a given activity. For example, the average tBodyAcc_mean_X, for participant #1, while LAYING down would be the averaged value of all tBodyAcc_mean_X measurements of participant #1 while they were laying down.)
 
 For more information on original measurements values see http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 Note: the variable names closely match the original variable names with the exception that dashes and parenthesis were omitted from the new variable names below and replaced with an underscore.  
 Note: the original variables were normalized and bounded within [-1,1]
 
-tBodyAcc_mean_X
-tBodyAcc_mean_Y
-tBodyAcc_mean_Z
-tBodyAcc_std_X
-tBodyAcc_std_Y
+-tBodyAcc_mean_X
+-tBodyAcc_mean_Y
+-tBodyAcc_mean_Z
+-tBodyAcc_std_X
+-tBodyAcc_std_Y
 tBodyAcc_std_Z
 tGravityAcc_mean_X
 tGravityAcc_mean_Y
