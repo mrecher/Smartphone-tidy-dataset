@@ -27,20 +27,20 @@ The following files were used from the HAR Dataset:
 #Variables extracted from HAR dataset
 To create the HARavg data set:
         - The mean and standard deviation variables (denoted in the variable names with mean(), and std() respectively) for each feature vectors, available in the "X_test.txt" and "X_train.txt" files, were extracted from the HAR Dataset. 
-        - The subject id was taken from the "y_train.txt" and "y_test.txt" files. 
-        - The activity labels were taken from the "activity_labels.txt"" file. 
+        -  The subject id was taken from the "y_train.txt" and "y_test.txt" files. 
+        -  The activity labels were taken from the "activity_labels.txt"" file. 
 
 ### DATA TRANSFORMATION AND DATA CLEANING MEASURES
 
 The following steps were taken to clean and transform the data into the HARavg dataset:
-1. The relevant files from the HAR Dataset were read into R Studio.&nbsp;
-2. The vector of variable names was subsetted to include only measurements on the mean and standard deviation for each measurement (e.g. variables with mean() and std() in the variable name).&nbsp;
-3. The vector of variables names was cleaned to remove parentheses and dashes.
-4. The test and train data files, consisting of 561 feature vectors, were subsetted using the vector of variable names to include only the mean and standard deviation measurements (i.e. variables with mean() and std () in the variable name).
-5. Using dplyr, the vector of variable names was added to the subsetted data sets.
-6. Several variables were appended to both the test and train data sets: id, activity and group variables.
-7. The "train" and "test data sets were joined together using rbind(). 
-8. The plyr package was loaded and ddply was used to create the new data set called HARavg; the average of each variable was calculated for each activity, and each subject. 
+1.  The relevant files from the HAR Dataset were read into R Studio.&nbsp;
+2.  The vector of variable names was subsetted to include only measurements on the mean and standard deviation for each measurement (e.g. variables with mean() and std() in the variable name).&nbsp;
+3.  The vector of variables names was cleaned to remove parentheses and dashes.
+4.  The test and train data files, consisting of 561 feature vectors, were subsetted using the vector of variable names to include only the mean and standard deviation measurements (i.e. variables with mean() and std () in the variable name).
+5.  Using dplyr, the vector of variable names was added to the subsetted data sets.
+6.  Several variables were appended to both the test and train data sets: id, activity and group variables.
+7.  The "train" and "test data sets were joined together using rbind(). 
+8.  The plyr package was loaded and ddply was used to create the new data set called HARavg; the average of each variable was calculated for each activity, and each subject. 
 
 
 ### VARIABLE DESCRIPTIONS
@@ -52,12 +52,12 @@ This is an interger variable. Its range is from 1 to 30. Each participant in the
 
 ### activity
 This is a character variable with the following category labels:
-        -"WALKING"
-        -"WALKING_UPSTAIRS"
-        -"WALKING_DOWNSTAIRS"
-        -"SITTING"
-        -"STANDING"
-        -"LAYING"
+        - "WALKING"
+        - "WALKING_UPSTAIRS"
+        - "WALKING_DOWNSTAIRS"
+        - "SITTING"
+        - "STANDING"
+        - "LAYING"
 
 ### group
 This is a character variable that identified if the participant was part of the test group or train group using the labels "test" or "train. All participants of the experiment were assigned to one of the two groups. This identifed can help link participants back to the relevant original data set more efficiently than just using id. 
@@ -69,72 +69,72 @@ For more information on original measurements values see http://archive.ics.uci.
 Note: the variable names closely match the original variable names with the exception that dashes and parenthesis were omitted from the new variable names below and replaced with an underscore.  
 Note: the original variables were normalized and bounded within [-1,1]
 
-&nbsp;*tBodyAcc_mean_X&nbsp;
-*tBodyAcc_mean_Y
-*tBodyAcc_mean_Z
-*tBodyAcc_std_X
--tBodyAcc_std_Y
-tBodyAcc_std_Z
-tGravityAcc_mean_X
-tGravityAcc_mean_Y
-tGravityAcc_mean_Z
-tGravityAcc_std_X
-tGravityAcc_std_Y
-tGravityAcc_std_Z
-tBodyAccJerk_mean_X
-tBodyAccJerk_mean_Y
-tBodyAccJerk_mean_Z
-tBodyAccJerk_std_X
-tBodyAccJerk_std_Y
-tBodyAccJerk_std_Z
-tBodyGyro_mean_X
-tBodyGyro_mean_Y
-tBodyGyro_mean_Z
-tBodyGyro_std_X
-tBodyGyro_std_Y
-tBodyGyro_std_Z
-tBodyGyroJerk_mean_X
-tBodyGyroJerk_mean_Y
-tBodyGyroJerk_mean_Z
-tBodyGyroJerk_std_X
-tBodyGyroJerk_std_Y
-tBodyGyroJerk_std_Z
-tBodyAccMag_mean
-tBodyAccMag_std
-tGravityAccMag_mean
-tGravityAccMag_std
-tBodyAccJerkMag_mean
-tBodyAccJerkMag_std
-tBodyGyroMag_mean
-tBodyGyroMag_std
-tBodyGyroJerkMag_mean
-tBodyGyroJerkMag_std
-fBodyAcc_mean_X
-fBodyAcc_mean_Y
-fBodyAcc_mean_Z
-fBodyAcc_std_X
-fBodyAcc_std_Y
-fBodyAcc_std_Z
-fBodyAccJerk_mean_X
-fBodyAccJerk_mean_Y
-fBodyAccJerk_mean_Z
-fBodyAccJerk_std_X
-fBodyAccJerk_std_Y
-fBodyAccJerk_std_Z
-fBodyGyro_mean_X
-fBodyGyro_mean_Y
-fBodyGyro_mean_Z
-fBodyGyro_std_X
-fBodyGyro_std_Y
-fBodyGyro_std_Z
-fBodyAccMag_mean
-fBodyAccMag_std
-fBodyBodyAccJerkMag_mean
-fBodyBodyAccJerkMag_std
-fBodyBodyGyroMag_mean
-fBodyBodyGyroMag_std
-fBodyBodyGyroJerkMag_mean
-fBodyBodyGyroJerkMag_std
+- tBodyAcc_mean_X
+- tBodyAcc_mean_Y
+- tBodyAcc_mean_Z
+- tBodyAcc_std_X
+- tBodyAcc_std_Y
+- tBodyAcc_std_Z
+- tGravityAcc_mean_X
+- tGravityAcc_mean_Y
+- tGravityAcc_mean_Z
+- tGravityAcc_std_X
+- tGravityAcc_std_Y
+- tGravityAcc_std_Z
+- tBodyAccJerk_mean_X
+- tBodyAccJerk_mean_Y
+- tBodyAccJerk_mean_Z
+- tBodyAccJerk_std_X
+- tBodyAccJerk_std_Y
+- tBodyAccJerk_std_Z
+- tBodyGyro_mean_X
+- tBodyGyro_mean_Y
+- tBodyGyro_mean_Z
+- tBodyGyro_std_X
+- tBodyGyro_std_Y
+- tBodyGyro_std_Z
+- tBodyGyroJerk_mean_X
+- tBodyGyroJerk_mean_Y
+- tBodyGyroJerk_mean_Z
+- tBodyGyroJerk_std_X
+- tBodyGyroJerk_std_Y
+- tBodyGyroJerk_std_Z
+- tBodyAccMag_mean
+- tBodyAccMag_std
+- tGravityAccMag_mean
+- tGravityAccMag_std
+- tBodyAccJerkMag_mean
+- tBodyAccJerkMag_std
+- tBodyGyroMag_mean
+- tBodyGyroMag_std
+- tBodyGyroJerkMag_mean
+- tBodyGyroJerkMag_std
+- fBodyAcc_mean_X
+- fBodyAcc_mean_Y
+- fBodyAcc_mean_Z
+- fBodyAcc_std_X
+- fBodyAcc_std_Y
+- fBodyAcc_std_Z
+- fBodyAccJerk_mean_X
+- fBodyAccJerk_mean_Y
+- fBodyAccJerk_mean_Z
+- fBodyAccJerk_std_X
+- fBodyAccJerk_std_Y
+- fBodyAccJerk_std_Z
+- fBodyGyro_mean_X
+- fBodyGyro_mean_Y
+- fBodyGyro_mean_Z
+- fBodyGyro_std_X
+- fBodyGyro_std_Y
+- fBodyGyro_std_Z
+- fBodyAccMag_mean
+- fBodyAccMag_std
+- fBodyBodyAccJerkMag_mean
+- fBodyBodyAccJerkMag_std
+- fBodyBodyGyroMag_mean
+- fBodyBodyGyroMag_std
+- fBodyBodyGyroJerkMag_mean
+- fBodyBodyGyroJerkMag_std
 
 
 #Acknowledgements
