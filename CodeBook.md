@@ -1,59 +1,75 @@
-Was code book submitted to GitHub that modifies and updates the codebooks available
-to you with the data to indicate all the variables and summaries you calculated, along
-with units, and any other relevant information?
-
-### Introduction
-
-Data was obtained from the Human Activity Recognition Using Smartphones Dataset Version 1.0 [1] and transformed to create a new data set called "HARavg". 
-
-The Human Activity Recognition Using Smartphones Dataset Version 1.0 (HAR Dataset) consists of data from experiments carried out with a group of 30 volunteers. The volunteers were partitioned into test and train groups. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II); multiple movement measurements were taken of each subject performing each activity.
-
-To create the HARavg data set, the mean and standard deviation variables for each measurement in the "test" and "train" files were extracted from the HAR Dataset, along with subject id and activity labels from associated files. The data were combined and the average was taken of each of the mean and standard deviation variables for each measurement, for each activity, and each subject to create the The HARavg"" data set.
-
-See CodeBook.md for more details about the the Human Activity Recognition Using Smartphones Dataset Version 1.0 and HARavg data set.
+#CODEBOOK FOR "HARavg"" DATASET
+#Project for Getting and Cleaning Data
 
 ### INTRODUCTION
 
-Data was used from the Human Activity Recognition Using Smartphones Dataset Version 1.0. to create a new data set called "HARavg". The HARavg"" dataset is an independent data set that consists of the average of the mean and standard deviations variables extracted from the .... for each activity and each subject.
+Data was obtained from the Human Activity Recognition Using Smartphones Dataset Version 1.0 [1] and transformed to create an independent data set called "HARavg". The data in the HARavg dataset consists of the average of each mean and standard deviation measurement- extracted from the HAR dataset-for each activity and each subject. For example, the first row of the dataset gives the averages for the standard deviation and mean measurements for participant #1 while laying down.
 
-See CodeBook.md for more information about the the Human Activity Recognition Using Smartphones Dataset Version 1.0 and Haravg data set.
+#About the Data
+The Human Activity Recognition Using Smartphones Dataset Version 1.0 (HAR Dataset) consists of data from experiments carried out with a group of 30 volunteers. The volunteers were partitioned into test and train groups. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II); multiple movement measurements using sensor signals (accelerometer and gyroscope) were taken of each subject performing each activity. Variables that constituted the mean and standard deviation for various measurements were included in the dataset. 
 
-Merges the training and the test sets to create one data set.
-2. Extracts only the measurements on the mean and standard deviation for each measurement.
 
-The Human Activity Recognition Using Smartphones Dataset consists of data from experiments carried out with a group of 30 volunteers. The volunteers were partitioned into test and train groups. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II); multiple movement measurements were taken of each subject performing each activity. 
-        - More information about the data set can be found at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+#Downloaded Data Files
+The following files were used from the HAR Dataset:
+
+        features.txt- List of variables used on the feature vector.
+        activity_labels.txt-Links the activity class number with the activity name. 
+        X_train.txt- A 561-feature vector with time and frequency domain variables.
+        y_train.txt- Training labels.
+        subject_train.txt- Participant id by row (rows correspond with X_train.txt)
+        X_test.txt- A 561-feature vector with time and frequency domain variables.
+        y_test.txt- Test Labels
+        subject_test.txt- Participant id by row (rows correspond with X_test.txt)
+
+- More information about the data set can be found at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
         - The Human Activity Recognition Using Smartphones Dataset Version 1.0.can be downloaded at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-The new, independent dataset was created from data that.....by extracting mean and standard deviation measurement variables from the "test" and "train" data made available as part of the Human Activity Recognition Using Smartphones Dataset Version 1.0.note xxx not included?????? variables identifying subject and labeling activities added to average info merged 
-new table create that consisted of the average of each variable was then taken for each activity, and each subject. 
-Using its embedded accelerometer and gyroscope
+#Variables extracted from HAR dataset
+To create the HARavg data set:
+        - The mean and standard deviation variables (denoted in the variable names with mean(),         
+        and std() respectively) for each feature vectors, available in the "X_test.txt" and 
+        "X_train.txt" files, were extracted from the HAR Dataset. 
+        - The subject id was taken from the "y_train.txt" and "y_test.txt" files. 
+        - The activity labels were taken from the "activity_labels.txt"" file. 
 
-### ABOUT THE DATA
-data files were obtained from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-The following data files from the dataset were used to create the new dataset.
+### DATA TRANSFORMATION AND DATA CLEANING MEASURES
 
+The following steps were taken to clean and transform the data into the HARavg dataset:
+1. The relevant files from the HAR Dataset were read into R Studio.
+2. The vector of variable names was subsetted to include only measurements on the mean and standard deviation for each measurement (e.g. variables with mean() and std() in the variable name).
+3. The vector of variables names was cleaned to remove parentheses and dashes.
+4. The test and train data files, consisting of 561 feature vectors, were subsetted using the vector of variable names to include only the mean and standard deviation measurements (i.e. variables with mean() and std () in the variable name).
+5. Using dplyr, the vector of variable names was added to the subsetted data sets.
+6. Several variables were appended to both the test and train data sets: id, activity and group variables.
+7. The "train" and "test data sets were joined together using rbind(). 
+8. The plyr package was loaded and ddply was used to create the new data set called HARavg; the average of each variable was calculated for each activity, and each subject. 
 
-More information on the original dataset can be found at  http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
-
-<!-- -->
-### DATA TRANSFORMATION AND CLEANING MEASURES
- 
-Merges the training and the test sets to create one data set.
-note xxx not included??????
-transformed variable names
-
-- Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file.
 
 ### VARIABLE DESCRIPTIONS
 
-all the variables and summaries you calculated, along
-with units,
+There are 69 total variables in the final data set.They include the following:
 
-id
-activity
-dataset
+# id
+This is an interger variable. Its range is from 1 to 30. Each participant in the experiment was given a numeric id.
+
+# activity
+This is a character variable with the following category labels:
+-"WALKING"
+-"WALKING_UPSTAIRS"
+-"WALKING_DOWNSTAIRS"
+-"SITTING"
+-"STANDING"
+-"LAYING"
+
+# group
+This is a character variable that identified if the participant was part of the test group or train group using the labels "test" or "train. All participants of the experiment were assigned to one of the two groups. This identifed can help link participants back to the relevant original data set more efficiently than just using id. 
+
+#averaged variables
+The following variables are numeric variables. They represent the average value of a variable that measured the mean or standard deviation of a measurement, of a subject participating in a given activity. For example, the average tBodyAcc_mean_X, for participant #1, while LAYING down would be the averaged value of all tBodyAcc_mean_X measurements of participant #1 while they were laying down.)
+
+For more information on original measurements values see http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Note: the variable names closely match the original variable names with the exception that dashes and parenthesis were omitted from the new variable names below and replaced with an underscore.  
+Note: the original variables were normalized and bounded within [-1,1]
 
 tBodyAcc_mean_X
 tBodyAcc_mean_Y
@@ -123,13 +139,6 @@ fBodyBodyGyroJerkMag_mean
 fBodyBodyGyroJerkMag_std
 
 
-
-
-
-
-
-
-
-Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
-
+#Acknowledgements
+Original data made available by:
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
